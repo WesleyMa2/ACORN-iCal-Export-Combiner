@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styles/App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/bootstrap.min.css";
 import { TabContent, TabPane, Container, Row, Col } from "reactstrap";
 import classnames from "classnames";
 
