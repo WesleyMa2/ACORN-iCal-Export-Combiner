@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormText,
-  Button,
-  CustomInput
-} from "reactstrap";
-import TabView from "./components/TabView";
-import "./styles/App.css";
+/* eslint-disable require-jsdoc */
+import React, {Component} from 'react';
+import {Container, Row, Col} from 'reactstrap';
+import TabView from './components/TabView';
+import './styles/App.css';
+import ScheduleUploader from './components/ScheduleUploader';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
+  constructor() {
+    super();
     this.state = {
-      ICSFiles: []
+      schedules: [],
     };
+    this.addSchedule = this.addSchedule.bind(this);
+  }
+
+  addSchedule(event, schedule) {
+    const updatedSchedules = this.state.schedules.slice();
+    updatedSchedules.push(schedule);
+    this.setState({ICSFiles: updatedSchedules});
+    console.log('Schedule Added: ' + schedule.id, schedule.name);
+    console.log('Num Schedules: ' + this.state.schedules.length)
+    event.preventDefault();
   }
 
   render() {
@@ -33,26 +33,7 @@ class App extends Component {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col md={{ size: 2, offset: 2 }}>
-            <FormGroup>
-              <Input
-                type="text"
-                name="owner"
-                id="scheduleOwner"
-                placeholder="Name"
-              />
-            </FormGroup>
-          </Col>
-          <Col md="5">
-            <FormGroup>
-              <Input type="file" name="file" id="icsUpload" />
-            </FormGroup>
-          </Col>
-          <Col md="1">
-            <Button color="primary">Add schedule</Button>
-          </Col>
-        </Row>
+        <ScheduleUploader addSchedule={(event, schedule) => this.addSchedule(event, schedule)}/>
         <Row>
           <Col>List of ics files</Col>
         </Row>

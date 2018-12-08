@@ -1,25 +1,14 @@
-import React from "react";
-import classnames from "classnames";
-import {
-  TabContent,
-  TabPane,
-  Nav,
-  NavItem,
-  NavLink,
-  Card,
-  Button,
-  CardTitle,
-  CardText,
-  Row,
-  Col
-} from "reactstrap";
+/* eslint-disable require-jsdoc */
+import React from 'react';
+import classnames from 'classnames';
+import {TabContent,TabPane,Nav,NavItem,NavLink,Row,Col} from 'reactstrap';
 
 // Component to swith between viewing schedule events in calendar or table view
 class TabView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: "viewCalendar"
+      activeTab: 'viewCalendar',
     };
 
     this.toggle = this.toggle.bind(this);
@@ -28,7 +17,7 @@ class TabView extends React.Component {
   toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
-        activeTab: tab
+        activeTab: tab,
       });
     }
   }
@@ -40,10 +29,10 @@ class TabView extends React.Component {
           <NavItem>
             <NavLink
               className={classnames({
-                active: this.state.activeTab === "viewCalendar"
+                active: this.state.activeTab === 'viewCalendar',
               })}
               onClick={() => {
-                this.toggle("viewCalendar");
+                this.toggle('viewCalendar');
               }}
             >
               Calendar
@@ -52,10 +41,10 @@ class TabView extends React.Component {
           <NavItem>
             <NavLink
               className={classnames({
-                active: this.state.activeTab === "viewTable"
+                active: this.state.activeTab === 'viewTable',
               })}
               onClick={() => {
-                this.toggle("viewTable");
+                this.toggle('viewTable');
               }}
             >
               Events in table
