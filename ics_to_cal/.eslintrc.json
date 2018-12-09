@@ -1,14 +1,18 @@
 {
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-      ],
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "allowImportExportEverywhere": true
-    },
-    "rules": {
-        "linebreak-style": ["error", "windows"],
-        "no-console": 0
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "allowImportExportEverywhere": true
+  },
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "no-console": 0
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "15.0",
+      "flowVersion": "0.53"
     }
+  }
 }

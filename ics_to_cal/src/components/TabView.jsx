@@ -1,24 +1,24 @@
 /* eslint-disable require-jsdoc */
-import React from 'react';
-import classnames from 'classnames';
-import {TabContent,TabPane,Nav,NavItem,NavLink,Row,Col} from 'reactstrap';
+import React from 'react'
+import classnames from 'classnames'
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap'
 
 // Component to swith between viewing schedule events in calendar or table view
 class TabView extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      activeTab: 'viewCalendar',
-    };
+      activeTab: 'viewCalendar'
+    }
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
   }
 
   toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
-        activeTab: tab,
-      });
+        activeTab: tab
+      })
     }
   }
 
@@ -28,11 +28,9 @@ class TabView extends React.Component {
         <Nav tabs>
           <NavItem>
             <NavLink
-              className={classnames({
-                active: this.state.activeTab === 'viewCalendar',
-              })}
+              className={classnames({ active: this.state.activeTab === 'viewCalendar' })}
               onClick={() => {
-                this.toggle('viewCalendar');
+                this.toggle('viewCalendar')
               }}
             >
               Calendar
@@ -40,11 +38,9 @@ class TabView extends React.Component {
           </NavItem>
           <NavItem>
             <NavLink
-              className={classnames({
-                active: this.state.activeTab === 'viewTable',
-              })}
+              className={classnames({ active: this.state.activeTab === 'viewTable' })}
               onClick={() => {
-                this.toggle('viewTable');
+                this.toggle('viewTable')
               }}
             >
               Events in table
@@ -68,8 +64,8 @@ class TabView extends React.Component {
           </TabPane>
         </TabContent>
       </div>
-    );
+    )
   }
 }
 
-export default TabView;
+export default TabView
