@@ -6,4 +6,4 @@ After uploading multiple schedules for various students, the tool generates a *s
 This file is a copy of the selected student's schedule, however their events will now contain a list of all other students who share this event.
 
 ## Technologies Used
-HTML, CSS, JS, React, reactstrap (Bootstrap 4), Express
+HTML, CSS, JS, React, reactstrap (Bootstrap 4), NodeJS, Express
