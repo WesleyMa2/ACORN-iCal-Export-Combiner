@@ -5,24 +5,30 @@ import TabView from './components/TabView'
 import './styles/App.css'
 import ScheduleUploader from './components/ScheduleUploader'
 import UploadsTable from './components/UploadsTable'
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
 import CustomToastContainer from './components/CustomToastContainer'
+import TargetSelector from './components/TargetStudentSelector'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
+      targetStudent: null,
       schedules: []
     }
     this.addSchedule = this.addSchedule.bind(this)
+    this.setTarget = this.setTarget.bind(this)
+  }
+
+  setTarget(event, student) {
+    this.setState({ targetStudent: student })
+    event.preventDefault()
   }
 
   addSchedule(event, schedule) {
     let updatedSchedules = this.state.schedules.slice()
     updatedSchedules.push(schedule)
     this.setState({ schedules: updatedSchedules })
-    toast.success('Schedule Added!')
     console.log('SCHEDULE ADDED: ID:[%d] Owner:[%s] File:[%s]', schedule.id, schedule.name, schedule.file)
     event.preventDefault()
   }
@@ -32,19 +38,14 @@ class App extends Component {
       <Container>
         <Row>
           <Col>
-            <div>
-              <TabView />
-            </div>
+            <TabView />
           </Col>
         </Row>
-        <ScheduleUploader addSchedule={this.addSchedule} />
-        <Row>
-          {/* <Col>List of ics files</Col> */}
-          <UploadsTable schedules={this.state.schedules}/>
-        </Row>
+        <ScheduleUploader addSchedule={this.addSchedule} schedules={this.state.schedules} />
+        <TargetSelector state={this.state} setTarget={this.setTarget} />
+        <UploadsTable schedules={this.state.schedules} />
         <CustomToastContainer />
       </Container>
-      
     )
   }
 }
