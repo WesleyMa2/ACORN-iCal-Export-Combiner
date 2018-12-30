@@ -5,7 +5,7 @@ import TabView from './components/TabView'
 import './styles/App.css'
 import ScheduleUploader from './components/ScheduleUploader'
 import UploadsTable from './components/UploadsTable'
-import {ToastContainer, toast} from 'react-toastify';
+import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CustomToastContainer from './components/CustomToastContainer'
 

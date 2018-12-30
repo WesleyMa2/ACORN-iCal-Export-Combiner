@@ -1,6 +1,6 @@
 {
-  "short_name": "ICS to Cal",
-  "name": "ICS to Calendar",
+  "short_name": "AiCEC",
+  "name": "ACORN iCal Export Combiner",
   "icons": [
     {
       "src": "favicon.ico",
