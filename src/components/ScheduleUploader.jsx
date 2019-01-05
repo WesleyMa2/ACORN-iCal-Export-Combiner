@@ -30,10 +30,15 @@ class ScheduleUploader extends React.Component {
   }
 
   handleChange(event) {
-    const name = event.target.name
-    this.setState({ [name]: event.target.value })
     event.preventDefault()
+    const name = event.target.name
+    if (name === 'ICSfile'){      
+      this.setState({ [name]: event.target.files[0] })      
+    } else {
+      this.setState({ [name]: event.target.value })// ORIGINAL
+    }
   }
+
 
   _checkInputs() {
     return new Promise((resolve, reject) => {
@@ -41,7 +46,7 @@ class ScheduleUploader extends React.Component {
       if (this.state.ICSfile === null) {
         toast.error('Please select a .ics file')
         pass = false
-      } else if (!this.state.ICSfile.trim().substring(this.state.ICSfile.lastIndexOf('.') === '.ics')){
+      } else if (!this.state.ICSfile.name.trim().substring(this.state.ICSfile.name.lastIndexOf('.') === '.ics')){
         toast.error('Not an .ics file')
         pass = false
       }
@@ -50,7 +55,7 @@ class ScheduleUploader extends React.Component {
         pass = false
       } else {
         for (var i = 0; i < this.props.schedules.length; i++) {
-          if (this.state.student === this.props.schedules[i].name) {
+          if (this.state.student.trim() === this.props.schedules[i].name) {
             pass = false
             toast.error('This person has been added (File ID: ' + i + ')')
             break
@@ -62,7 +67,6 @@ class ScheduleUploader extends React.Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault()
     this._checkInputs().then(res => {
       if (res === true) {
         let newSchedule = new Schedule(this.state.nextId, this.state.student, this.state.ICSfile)
@@ -71,6 +75,7 @@ class ScheduleUploader extends React.Component {
         toast.success('Schedule Added!')
       }
     })
+    event.preventDefault()
   }
 
   render() {

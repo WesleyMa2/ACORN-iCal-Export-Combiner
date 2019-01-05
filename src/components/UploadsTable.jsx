@@ -18,7 +18,7 @@ class UploadsTable extends React.Component {
         <tr key={schedule.id}>
           <th scope="row">{schedule.id}</th>
           <td>{schedule.name}</td>
-          <td>{schedule.file}</td>
+          <td>{schedule.file.name}</td>
         </tr>
       )
     })
