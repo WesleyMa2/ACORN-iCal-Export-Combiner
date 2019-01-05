@@ -19,7 +19,8 @@ class TargetSelector extends React.Component {
   static get propTypes() {
     return {
       state: PropTypes.object,
-      setTarget: PropTypes.func
+      setTarget: PropTypes.func,
+      sendSchedules: PropTypes.func
     }
   }
   toggle() {
@@ -57,7 +58,7 @@ class TargetSelector extends React.Component {
           </Dropdown>
         </Col>
         <Col md={{ size: 3, offset: 1 }}>
-          <Button color="primary" type="submit">
+          <Button color="primary" type="submit" onClick={this.props.sendSchedules}>
             Combine Schedules
           </Button>
         </Col>
