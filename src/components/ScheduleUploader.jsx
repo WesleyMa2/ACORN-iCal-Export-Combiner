@@ -46,7 +46,7 @@ class ScheduleUploader extends React.Component {
       if (this.state.ICSfile === null) {
         toast.error('Please select a .ics file')
         pass = false
-      } else if (!this.state.ICSfile.name.trim().substring(this.state.ICSfile.name.lastIndexOf('.') === '.ics')){
+      } else if (!(this.state.ICSfile.type === 'text/calendar')){
         toast.error('Not an .ics file')
         pass = false
       }
