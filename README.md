@@ -5,5 +5,7 @@ This is an online tool meant for students to easily merge different course sched
 After uploading multiple schedules for various students, the tool generates a *single* .ics file for a chosen student.
 This file is a copy of the selected student's schedule, however their events will now contain a list of all other students who share this event.
 
-## Technologies Used
-HTML, CSS, JS, React, reactstrap (Bootstrap 4), NodeJS, Express
+## Main Technologies and Packages Used
+HTML, CSS, JS, React, NodeJS.
+
+reactstrap (Bootstrap 4), express, axios, multer
