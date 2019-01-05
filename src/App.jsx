@@ -29,11 +29,11 @@ class App extends Component {
   }
 
   addSchedule(event, schedule) {
+    // event.preventDefault()
     let updatedSchedules = this.state.schedules.slice()
     updatedSchedules.push(schedule)
     this.setState({ schedules: updatedSchedules })
     console.log('SCHEDULE ADDED: ID:[%d] Owner:[%s] File:[%s]', schedule.id, schedule.name, schedule.file.name)
-    event.preventDefault()
   }
 
   sendSchedules(event) {
