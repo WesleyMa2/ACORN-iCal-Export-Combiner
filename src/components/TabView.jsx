@@ -1,6 +1,7 @@
 /* eslint-disable require-jsdoc */
 import React from 'react'
 import classnames from 'classnames'
+import Calendar from './Calendar.jsx'
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap'
 
 /**
@@ -54,7 +55,7 @@ class TabView extends React.Component {
             <TabPane tabId="viewCalendar">
               <Row>
                 <Col>
-                  <h4>Big ass calendar</h4>
+                  <Calendar/>
                 </Col>
               </Row>
             </TabPane>

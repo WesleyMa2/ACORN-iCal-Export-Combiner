@@ -6,3 +6,8 @@
 .col > div {
   border: black;
 }
+
+.scrollable {
+  height:60%;
+  overflow-y: scroll;
+}
