@@ -6,6 +6,7 @@ After uploading multiple schedules for various students, the tool generates a *s
 This file is a copy of the selected student's schedule, however their events will now contain a list of all other students who share this event.
 
 ## Main Technologies and Packages Used
-HTML, CSS, JS, React, NodeJS.
+HTML, CSS, JS, React, NodeJS
 
-reactstrap (Bootstrap 4), express, axios, multer
+## Other Dependencies
+reactstrap (Bootstrap 4), express, axios, multer, cozy-ical

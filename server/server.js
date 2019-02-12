@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, '../build')));
 
 // An api endpoint that returns a short list of items
 app.post('/getSchedule', upload.array('icsFile'),(req, res) => {
-  combiner().combineCals(req.files, req.body.target, req.body.owners)
+  combiner.combineCals(req.files, req.body.target, req.body.owners)
   res.send("TEST")
 })
 

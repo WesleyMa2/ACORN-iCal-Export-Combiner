@@ -30,7 +30,6 @@
     "@types/classnames": "^2.2.6",
     "@types/react": "^16.7.13",
     "eslint": "^5.9.0",
-    "eslint-config-google": "^0.11.0",
     "eslint-plugin-react": "^7.11.1",
     "nodemon": "^1.18.9"
   },

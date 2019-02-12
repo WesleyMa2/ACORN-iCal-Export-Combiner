@@ -3,30 +3,25 @@ const VEvent = require('cozy-ical').VEvent
 const VAlarm = require('cozy-ical').VAlarm
 const ICalParser = require('cozy-ical').ICalParser
 
-
-
-module.exports = function combiner() {
+let combiner = (function() {
   'use-strict'
-  const _parseCal = (calBuffer) => {
+  let module = {}
+
+  function _parseCal(calBuffer){
     return new Promise ((resolve) => {
       let parser = new ICalParser();
       parser.parseString(calBuffer.toString(), (err, cal) => {
         resolve(cal)
       })
-      
     })
-    
   }
 
-  var combineCals = function (calFiles, target, owners){
+  module.combineCals = function (calFiles, target, owners){
     _parseCal(calFiles[0].buffer).then(res => {
       console.log('TARGET: ', target)
       console.log('OWNERS: ', owners)
       console.log('BUFFER CONTENT: ', res)
     })
-    
   }
-  return {
-    combineCals: combineCals
-  }
-}
+  return module
+})()
