@@ -1,6 +1,9 @@
 {
   "name": "ics_to_cal",
   "version": "0.1.0",
+  "engines": {
+    "yarn": "1.9.4"
+  },
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",

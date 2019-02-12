@@ -3,7 +3,7 @@ const VEvent = require('cozy-ical').VEvent
 const VAlarm = require('cozy-ical').VAlarm
 const ICalParser = require('cozy-ical').ICalParser
 
-let combiner = (function() {
+module.exports = (function() {
   'use-strict'
   let module = {}
 
