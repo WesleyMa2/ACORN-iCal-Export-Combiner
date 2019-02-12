@@ -10,7 +10,9 @@
     "no-console": 0
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "amd": true,
+    "node": true
   },
   "settings": {
     "react": {
