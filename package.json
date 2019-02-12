@@ -2,7 +2,8 @@
   "name": "ics_to_cal",
   "version": "0.1.0",
   "engines": {
-    "yarn": "1.9.4"
+    "yarn": "1.9.4",
+    "node": "8.11.4"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +29,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "server": "nodemon server/server.js",
-    "heroku-postbuild": "echo Skip build on Heroku"
+    "heroku-postbuild": "yarn build"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.6",
